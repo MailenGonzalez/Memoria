@@ -1,0 +1,9 @@
+{"datos":[{"id":0, "valor":"colores", "posibles":["COLOR", "COLORES"]},
+{"id":1, "valor":"frutas", "posibles":["FRUTA","FRUTAS"]},
+{"id":2, "valor":"femenino","posibles":["FEMENINO", "MUJER", "NOMBRES FEMENINOS"]},
+{"id":3, "valor":"masculino", "posibles":["MASCULINO", "VARON", "NOMBRES MASCULINOS"]},
+{"id":4, "valor":"animales", "posibles":["ANIMAL", "ANIMALES"]},
+{"id":5, "valor":"vestimenta", "posibles":["VESTIMENTA", "INDUMENTARIA", "ROPA"]},
+{"id":6, "valor":"transportes", "posibles":["TRANSPORTE", "VEHÍCULOS", "VEHICULOS"]},
+{"id":7, "valor":"paises", "posibles":["PAÍS", "PAISES"]},
+{"id":8, "valor":"verduras", "posibles":["VERDURA", "VERDURAS"]}]}
