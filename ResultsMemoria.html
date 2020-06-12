@@ -1,0 +1,319 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <meta charset="utf-8"> 
+        <title>Resultados Rehabilitación Cognitiva Rehabilitación Visuoespacial</title>         
+        <!-- Sets initial viewport load and disables zooming  -->         
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no"> 
+        
+        <link rel="shortcut icon" type="image/png" href="./favicon.png">
+
+        <!-- site css -->         
+        <link rel="stylesheet" href="css/site.min.css"> 
+        <link rel="stylesheet" href="css/calendarCSS.css"> 
+        <link rel="stylesheet" href="css/jquery-ui.css" /> 
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,800,700,400italic,600italic,700italic,800italic,300italic" rel="stylesheet" type="text/css"> 
+
+        <!-- site js -->
+        <script type="text/javascript" src="js/site.min.js"></script>         
+        <script src="js/jquery-1.11.3.min.js" type="text/javascript"></script>         
+        <script src="js/jquery-ui.js"></script>         
+        <script src="js/jquery.ui.datepicker-es.js"></script>         
+        <script src="js/results.js" type="text/javascript"></script>         
+        <script src="js/chart.min.js" type="text/javascript"></script>  
+        <script src="js/jspdf.js" type="text/javascript"></script>    
+        <script src="js/pdfFromHTML.js" type="text/javascript"></script>
+        <script src="js/xlsx.core.min.js" type="text/javascript"></script>
+        <script src="js/excelplus-2.5.min.js" type="text/javascript"></script>      
+
+    </head>     
+    <body id="HTMLtoPDF" style="background-color: #f1f2f6;"> 
+        <div class="docs-header"> 
+            <!--nav-->             
+            <nav class="navbar navbar-default navbar-custom" role="navigation"> 
+                <div class="container"> 
+                    <div class="navbar-header"> 
+                        <a class="navbar-brand" href="index.html">
+                            <img src="img/logo.png" height="40">
+                        </a>                         
+                    </div>                     
+                </div>                 
+            </nav>             
+            <!--header-->             
+            <div class="topic"> 
+                <div class="container"> 
+                    <div class="col-md-8"> 
+                        <h3>Rehabilitación y Estimulación Cognitiva</h3> 
+                        <h2>Resultados Rehabilitación Visuoespacial</h2> 
+                    </div>                     
+                </div>                 
+            </div>             
+        </div>
+
+        <!--documents-->         
+        <div class="container documents">
+            <div class="example"></div>  
+
+            <!-- Resultados ejercicios de Rehabilitacion Neglet -->             
+                <div class="example"> 
+                    <h2 class="example-title"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Paciente</h2> 
+                    <div class="row"> 
+                        <div class="col-md-12"> 
+                            <div class="panel panel-primary"> 
+                                <div class="panel-heading"> 
+                                    <h3 class="panel-title" id="titleDatos">Datos</h3> 
+                                </div>                             
+                                <div class="panel-body">
+                                    <table class="table" id="tabla">                   
+                                        <tbody id="tableBody">
+                                            <tr>
+                                                <td class="col-md-5">Apellido</td>
+                                                <td class="col-md-7" id="apellido"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="col-md-5">Nombre</td>
+                                                <td class="col-md-7" id="nombre"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="col-md-5">Email</td>
+                                                <td class="col-md-7" id="email"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="col-md-5">Terapeuta</td>
+                                                <td class="col-md-7" id="terapeuta"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="col-md-5">Fecha de inicio del tratamiento</td>
+                                                <td class="col-md-7" id="fechaInicio"></td>
+                                            </tr>
+                                        </tbody>                                  
+                                    </table>
+                                </div>                             
+                            </div>                         
+                        </div>                     
+                    </div> 
+                </div>   
+
+            <!-- Pacientes resultados generales-->                 
+                <div class="example" id="estadisticas"> 
+                    <h2 class="example-title"><span class="glyphicon glyphicon-stats" aria-hidden="true"></span> Estadísticas generales</h2> 
+                    <div class="row"> 
+                        <div class="col-md-12"> 
+                            <div class="panel panel-primary"> 
+                                <div class="panel-heading"> 
+                                    <h3 class="panel-title">Cantidad de partidas por mes</h3> 
+                                </div>                                 
+                                <div class="panel-body"> 
+                                    <canvas id="partidasChart" width="400" height="100"></canvas>                                     
+                                </div>                                 
+                            </div>                             
+                        </div>                          
+                    </div>                     
+                </div>
+
+                <!-- <div class="example"> 
+                    <div class="row"> 
+                        <div class="col-md-12"> 
+                            <div class="panel panel-primary"> 
+                                <div class="panel-heading"> 
+                                    <h3 class="panel-title">Aciertos a medida que avanza en el tratamiento</h3> 
+                                </div>                                 
+                                <div class="panel-body"> 
+                                   <!-- <canvas id="myChart" width="400" height="100"></canvas>                                        
+                                </div>                                 
+                            </div>                             
+                        </div>                          
+                    </div>                     
+                </div> -->
+        <!-- Resultados por rango -->                 
+                <div class="example"> 
+                    <h2 class="example-title"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Resultados generales por rango</h2> 
+                    <div class="row" id="rowFecha"> 
+                        <div class="col-md-2"> 
+                            Fecha Inicio:
+                            <input type="text" id="datepickerInicio" class="form-control" data-format="dd/MM/yyyy" /> 
+                        </div>
+                        <div class="col-md-2"></div>
+                        <div class="col-md-2"> 
+                            Fecha Fin:
+                            <input type="text" id="datepickerFin" class="form-control" data-format="dd/MM/yyyy" /> 
+                        </div>                         
+                        <script type="text/javascript">
+                            $( function() {
+                            $.datepicker.setDefaults($.datepicker.regional["es"]);
+                            $("#datepickerInicio").datepicker({
+                                firstDay: 1});
+                            });
+                        </script>
+                        <script type="text/javascript">
+                            $( function() {
+                            $.datepicker.setDefaults($.datepicker.regional["es"]);
+                            $("#datepickerFin").datepicker({
+                                firstDay: 1});
+                            });
+                        </script>                         
+                    </div>
+                    <div id="summayResults">
+                    </div>
+                <!--<div class="row"> 
+                        <div class="col-md-12"> 
+                            <div class="panel panel-primary"> 
+                                <div class="panel-heading"> 
+                                    <h3 class="panel-title" id="tituloPanelResultados"></h3> 
+                                </div>                                 
+                                <div class="panel-body">
+                                    <table class="table">                   
+                                        <tbody>
+                                            <tr>
+                                                <td class="col-md-5">Cantidad de items que aparecen</td>
+                                                <td class="col-md-2" id="summaryItems"></td>
+                                                <td class="col-md-2"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="col-md-5">Cantidad de clicks</td>
+                                                <td class="col-md-2" id="summaryClicks"></td>
+                                                <td class="col-md-2"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="col-md-5">Cantidad de aciertos</td>
+                                                <td class="col-md-2" id="summaryAciertos"></td>
+                                                <td class="col-md-2" id="summaryPercentageAciertos"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="col-md-5">Cantidad de errores (cant clicks - cant aciertos)</td>
+                                                <td class="col-md-2" id="summaryErrores"></td>
+                                                <td class="col-md-2"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="col-md-5">Aciertos cuadrante 1</td>
+                                                <td class="col-md-2" id="summaryC1"></td>
+                                                <td class="col-md-2" id="summaryPercentageC1"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="col-md-5">Aciertos cuadrante 2</td>
+                                                <td class="col-md-2" id="summaryC2"></td>
+                                                <td class="col-md-2" id="summaryPercentageC2"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="col-md-5">Aciertos cuadrante 3</td>
+                                                <td class="col-md-2" id="summaryC3"></td>
+                                                <td class="col-md-2" id="summaryPercentageC3"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="col-md-5">Aciertos cuadrante 4</td>
+                                                <td class="col-md-2" id="summaryC4"></td>
+                                                <td class="col-md-2" id="summaryPercentageC4"></td>
+                                            </tr>
+                                        </tbody>                                  
+                                    </table>         
+                                </div>                                 
+                            </div>                             
+                        </div>                          
+                    </div>-->                         
+                </div>
+
+        <!-- Resultados por día -->                 
+                <div class="example" id="tituloDetalladoNoVisible"> 
+                    <h2 class="example-title"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Resultados detallados por día</h2> 
+                    <div class="row" id="rowFecha"> 
+                        <div class="col-md-1"> 
+                            Seleccione la fecha:
+                        </div> 
+                        <div class="col-md-2"> 
+                            <input type="text" id="datepicker" class="form-control" data-format="dd/MM/yyyy" /> 
+                        </div>
+                        <div class="col-md-1">
+                            <button type="button" class="btn btn-primary btn-block" id="cleanDay" ><i id="iconoCleanDay" class="glyphicon glyphicon-chevron-down"></i></button>
+                        </div>                          
+                        <script type="text/javascript">
+                            $( function() {
+                            $.datepicker.setDefaults($.datepicker.regional["es"]);
+                            $("#datepicker").datepicker({
+                                firstDay: 1});
+                            });
+                        </script>                         
+                    </div>                     
+                </div>
+
+                <div id="results">
+                </div>
+
+                <div id="configs">
+                </div>       
+
+                <!-- Configuración del día                                     
+                <div class="row"> 
+                    <div class="col-md-12"> 
+                        <div class="panel panel-primary"> 
+                            <div class="panel-heading"> 
+                                <h3 class="panel-title">Configuraciones del ejercicio</h3> 
+                            </div>                                     
+                            <div class="panel-body"> 
+                                <table class="table" id="TablaConfiguraciones1"> 
+                                    <tbody> 
+                                        <tr id="transparenciaCuadrante1"> 
+                                            <td>Visibilidad del cuadrante</td> 
+                                        </tr>                                                 
+                                        <tr id="tipoFigura1"> 
+                                            <td>Tipo de figura</td> 
+                                        </tr>                                                 
+                                        <tr id="tamanioTarget1"> 
+                                            <td>Tamaño del Target</td> 
+                                        </tr>                                                 
+                                        <tr id="backgroundColor1"> 
+                                            <td>Color de fondo</td> 
+                                        </tr>                                                 
+                                        <tr id="tiempoExposicion1"> 
+                                            <td>Tiempo de exposicion (segundos)</td> 
+                                        </tr>                                                 
+                                        <tr id="tiempoAparicion1"> 
+                                            <td>Velocidad de aparición del Target</td> 
+                                        </tr>                                                 
+                                        <tr id="velocidadTrayectoriaTarget1"> 
+                                            <td>Trayectoria del Target</td> 
+                                        </tr>                                                 
+                                        <tr id="cantElementosDistractores1"> 
+                                            <td>Cantidad de elementos distractores</td> 
+                                        </tr>                                                 
+                                        <tr id="tamanioElementosDistractores1"> 
+                                            <td>Tamaño de los elementos distractores</td> 
+                                        </tr>                                                 
+                                        <tr id="velocidadTrayectoriaElementosDistractores1"> 
+                                            <td>Trayectoria de los elementos distractores</td> 
+                                        </tr>                                                 
+                                        <tr id="tiempoEjercicio1"> 
+                                            <td>Duración del ejercicio (minutos)</td> 
+                                        </tr>                                                 
+                                    </tbody>                                             
+                                </table>                                         
+                            </div>                                     
+                        </div>                                 
+                    </div>                             
+                </div>  -->                                                                     
+                <div class="row"> 
+                    <div class="col-md-1"></div>                                 
+                    <div class="col-md-1"></div>                                 
+                    <div class="col-md-1"></div>                                 
+                    <div class="col-md-1"></div>                                 
+                    <div class="col-md-1"></div>                                 
+                    <div class="col-md-1"></div>                                 
+                    <div class="col-md-1"></div>                                 
+                    <div class="col-md-1"></div>                                                                                               
+                    <div class="col-md-2">
+                        <div class='btn btn-primary btn-block' id="botonPDF"> 
+                            Descargar PDF
+                            <i class="glyphicon glyphicon-download-alt"></i> 
+                        </div>                                 
+                    </div>
+                    <div class="col-md-2">        
+                        <div class='btn btn-primary btn-block' id="botonEXCEL"> 
+                            Descargar EXCEL
+                            <i class="glyphicon glyphicon-download-alt"></i> 
+                        </div> 
+                    </div>  
+                </div> 
+                <div class="row"> 
+                    <br>
+                </div>                                                                     
+        </div>                             
+    </body>

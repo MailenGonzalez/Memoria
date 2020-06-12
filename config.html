@@ -1,0 +1,795 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <meta charset="utf-8"> 
+        <title>Rehabilitación Cognitiva</title>         
+        <!-- Sets initial viewport load and disables zooming  -->         
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">         
+        
+        <link rel="shortcut icon" type="image/png" href="./favicon.png">
+        
+        <!-- site css -->         
+        <link rel="stylesheet" href="css/site.min.css"> 
+        <link rel="stylesheet" href="css/calendarCSS.css"> 
+        <link rel="stylesheet" href="css/jquery-ui.css" /> 
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,800,700,400italic,600italic,700italic,800italic,300italic" rel="stylesheet" type="text/css"> 
+         
+        <!-- site js -->
+        <script type="text/javascript" src="js/site.min.js"></script>         
+        <script src="js/jquery-1.11.3.min.js" type="text/javascript"></script>         
+        <script src="js/jquery-ui.js"></script>         
+        <script src="js/jquery.ui.datepicker-es.js"></script>         
+        <script src="js/config.js" type="text/javascript"></script>         
+    </head>     
+    <body style="background-color: #f1f2f6;"> 
+        <div class="docs-header"> 
+            <!--nav-->             
+            <nav class="navbar navbar-default navbar-custom" role="navigation"> 
+                <div class="container"> 
+                    <div class="navbar-header">                          
+                        <a class="navbar-brand" href="index.html">
+                            <img src="img/logo.png" height="40">
+                        </a>                         
+                    </div>                     
+                </div>                 
+            </nav>             
+            <!--header-->             
+            <div class="topic"> 
+                <div class="container"> 
+                    <div class="col-md-8"> 
+                        <h3>Rehabilitación y Estimulación Cognitiva</h3> 
+                        <h2>Configuración Rehabilitación Visuoespacial</h2> 
+                    </div>                     
+                </div>                 
+            </div>             
+        </div>         
+        <!--documents-->         
+        <div class="container documents"> 
+            <div class="example"></div>             
+            <!-- Configuración ejercicios de Rehabilitacion Neglet
+                 Usuarios
+            ================================================== -->             
+            <div class="example"> 
+                <h2 class="example-title"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Paciente</h2> 
+                <div class="row"> 
+                    <div class="col-md-12"> 
+                        <div class="panel panel-primary"> 
+                            <div class="panel-heading"> 
+                                <h3 class="panel-title">Datos</h3> 
+                            </div>                             
+                            <div class="panel-body"> 
+                                <div class="row"> 
+                                    <div class="col-md-5"> 
+                                        Nombre
+                                    </div>                                     
+                                    <div class="col-md-5"> 
+                                        <p id="nombrePaciente">Nombre</p> 
+                                    </div>                                     
+                                </div>                                                                 
+                                <div class="row"> 
+                                    <div class="col-md-5"> 
+                                        Fecha Activación
+                                    </div>                                     
+                                    <div class="col-md-5"> 
+                                        <input type="text" id="datepicker" class="form-control" data-format="dd/MM/yyyy" /> 
+                                    </div>                                     
+                                    <script type="text/javascript">
+                                        $( function() {
+                                        $.datepicker.setDefaults($.datepicker.regional["es"]);
+                                        $("#datepicker").datepicker({
+                                            firstDay: 1});
+                                        });
+                                    </script>                                     
+                                </div>                                 
+                            </div>                             
+                        </div>                         
+                    </div>                     
+                </div> 
+            </div>                 
+                
+            <!-- Configuración ejercicios de Rehabilitacion Neglet
+                 Primer Ejercicio
+                ================================================== -->                 
+            <div class="example"> 
+                <h2 class="example-title"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Configuración Ejercicios de Rehabilitación Neglet</h2> 
+                <div class="row"> 
+                    <div class="col-md-12"> 
+                        <div class="panel panel-primary"> 
+                            <div class="panel-heading"> 
+                                <h3 class="panel-title">Primer Ejercicio</h3> 
+                            </div>                                 
+                            <div class="panel-body"> 
+                                <div class="row"> 
+                                    <div class="col-md-5"> 
+                                        Visibilidad del cuadrante
+                                    </div>                                         
+                                    <div class="col-md-5"> 
+                                        <input type="number" id="transparenciaCuadrante1" min="0" max="100" value="100" required class="form-control" /> 
+                                    </div>                                         
+                                </div>                                     
+                                <div class="row"> 
+                                    <div class="col-md-5"> 
+                                        Tipo de figura
+                                    </div>                                         
+                                    <div class="col-md-5"> 
+                                        <select name="selecter_basic" class="btn btn-primary dropdown-toggle" style="width: 100%;" type="button" id="tipoFigura1"> 
+                                            <option value="0">Simple</option>                                                 
+                                            <option value="1">Abstracta</option>                                                 
+                                            <option value="2">Concreta</option>                                                 
+                                        </select>                                             
+                                    </div>                                         
+                                </div>                                     
+                                <div class="row"> 
+                                    <div class="col-md-5"> 
+                                        Tamaño del Target
+                                    </div>                                         
+                                    <div class="col-md-5"> 
+                                        <select name="selecter_basic" class="btn btn-primary dropdown-toggle" style="width: 100%;" type="button" id="tamanioTarget1"> 
+                                            <option value="0">Pequeña</option>                                              
+                                            <option value="1">Chica</option>                                                 
+                                            <option value="2">Intermedia</option>                                                 
+                                            <option value="3">Grande</option>                                                 
+                                        </select>                                             
+                                    </div>                                         
+                                </div>                                     
+                                <div class="row"> 
+                                    <div class="col-md-5"> 
+                                        Color de fondo
+                                    </div>                                         
+                                    <div class="col-md-5"> 
+                                        <div id="html5DIV"> 
+                                            <input type="color" id="backgroundColor1" value="#2c3e50" list="colors" style="width:100%;height:34px;"> 
+                                            <datalist id="colors"> 
+                                                <option>#bdc3c7</option>                                                     
+                                                <option>#95a5a6</option>                                                     
+                                                <option>#7f8c8d</option>                                                     
+                                                <option>#2c3e50</option>                                                     
+                                                <option>#34495e</option>                                                     
+                                            </datalist>                                                 
+                                            <!-- onchange="clickColor(0, -1, -1, 5)" ante el cambio de color -->
+                                        </div>                                             
+                                    </div>                                         
+                                </div>                                     
+                                <div class="row"> 
+                                    <div class="col-md-5"> 
+                                        Tiempo de exposicion (seg)
+                                    </div>                                         
+                                    <div class="col-md-5"> 
+                                        <input type="number" id="tiempoExposicion1" min="0" max="60" value="7" required class="form-control" /> 
+                                    </div>                                         
+                                </div>                                     
+                                <div class="row"> 
+                                    <div class="col-md-5"> 
+                                        Velocidad de aparición del Target
+                                    </div>                                         
+                                    <div class="col-md-5"> 
+                                        <select name="selecter_basic" class="btn btn-primary dropdown-toggle" style="width: 100%;" type="button" id="tiempoAparicion1"> 
+                                            <option value="0">Mínima</option>                                                 
+                                            <option value="1">Media</option>                                                 
+                                            <option value="2">Máxima</option>                                                 
+                                            <option value="3">Nula</option>                                                 
+                                        </select>                                             
+                                    </div>                                         
+                                </div>                                     
+                                    <div class="row"> 
+                                        <div class="col-md-5"> 
+                                            Trayectoria del Target
+                                        </div>                                         
+                                        <div class="col-md-5"> 
+                                            <select name="selecter_basic" class="btn btn-primary dropdown-toggle" style="width: 100%;" type="button" id="velocidadTrayectoriaTarget1"> 
+                                                <option value="0">Nula</option>                                                 
+                                                <option value="1">Lenta</option>                                                 
+                                                <option value="2">Rápida</option>                                                 
+                                                <option value="3">Muy Rápida</option>                                                 
+                                            </select>                                             
+                                        </div>                                         
+                                    </div>                                     
+                                    <div class="row"> 
+                                        <div class="col-md-5"> 
+                                            Cantidad de elementos distractores
+                                        </div>                                         
+                                        <div class="col-md-5"> 
+                                            <input type="number" min="0" max="10" value="0" required class="form-control" id="cantElementosDistractores1" /> 
+                                        </div>                                         
+                                    </div>                                     
+                                    <div class="row"> 
+                                        <div class="col-md-5"> 
+                                            Tamaño de los elementos distractores
+                                        </div>                                         
+                                        <div class="col-md-5"> 
+                                            <select name="selecter_basic" class="btn btn-primary dropdown-toggle" style="width: 100%;" type="button" id="tamanioElementosDistractores1"> 
+                                                <option value="0">Pequeña</option>                                                 
+                                                <option value="1">Chica</option>                                                 
+                                                <option value="2">Intermedia</option>                                                 
+                                                <option value="3">Grande</option>                                                 
+                                            </select>                                             
+                                        </div>                                         
+                                    </div>                                     
+                                    <div class="row"> 
+                                        <div class="col-md-5"> 
+                                            Trayectoria de los elementos distractores
+                                        </div>                                         
+                                        <div class="col-md-5"> 
+                                            <select name="selecter_basic" class="btn btn-primary dropdown-toggle" style="width: 100%;" type="button" id="velocidadTrayectoriaElementosDistractores1"> 
+                                                <option value="0">Nula</option>                                                 
+                                                <option value="1">Lenta</option>                                                 
+                                                <option value="2">Rápida</option>                                                 
+                                                <option value="3">Muy Rápida</option>                                                 
+                                            </select>                                             
+                                        </div>                                         
+                                    </div>                                     
+                                    <div style="display:none" class="row"> 
+                                        <div class="col-md-5"> 
+                                            Cantidad de veces de repetición de la frase
+                                        </div>                                         
+                                        <div class="col-md-5"> 
+                                            <input type="number" min="1" max="5" value="1" required class="form-control" id="cantRepeticionFrase1" /> 
+                                        </div>                                         
+                                    </div>                                     
+                                    <div style="display:none" class="row"> 
+                                        <div class="col-md-5"> 
+                                            Demora en la aparición del Target (seg)
+                                        </div>                                         
+                                        <div class="col-md-5"> 
+                                            <input type="number" min="0" max="7" value="2" required class="form-control" id="delayFrase1" /> 
+                                        </div>                                         
+                                    </div>                                     
+                                    <div style="display:none" class="row"> 
+                                        <div class="col-md-5"> 
+                                            Control inhibitorio motor
+                                        </div>                                         
+                                        <div class="col-md-5"> 
+                                            <select name="selecter_basic" class="btn btn-primary dropdown-toggle" style="width: 100%;" type="button" id="controlInhibitorioMotor1"> 
+                                                <option value="0">No</option>                                                 
+                                                <option value="1">Si</option>                                                 
+                                            </select>                                             
+                                        </div>                                         
+                                    </div>                                     
+                                    <div class="row"> 
+                                        <div class="col-md-5"> 
+                                            Duración del ejercicio (min)
+                                        </div>                                         
+                                        <div class="col-md-5"> 
+                                            <input type="number" min="0" max="100" value="1" required class="form-control" id="tiempoEjercicio1" /> 
+                                        </div>                                         
+                                    </div>                                     
+                                </div>                                 
+                            </div>                             
+                        </div>                         
+                    </div>                     
+                    <!-- Segundo Ejercicio ================================================== -->                     
+                    <div class="example"> 
+                        <div class="row"> 
+                            <div class="col-md-12"> 
+                                <div class="panel panel-primary"> 
+                                    <div class="panel-heading"> 
+                                        <h3 class="panel-title">Segundo Ejercicio</h3> 
+                                    </div>                                     
+                                    <div class="panel-body"> 
+                                        <div class="row"> 
+                                            <div class="col-md-5"> 
+                                                Visibilidad del cuadrante
+                                            </div>                                             
+                                            <div class="col-md-5"> 
+                                                <input type="number" id="transparenciaCuadrante2" min="0" max="100" value="100" required class="form-control" /> 
+                                            </div>                                             
+                                        </div>                                         
+                                        <div class="row"> 
+                                            <div class="col-md-5"> 
+                                                Tipo de figura
+                                            </div>                                             
+                                            <div class="col-md-5"> 
+                                                <select name="selecter_basic" class="btn btn-primary dropdown-toggle" style="width: 100%;" type="button" id="tipoFigura2"> 
+                                                    <option value="0">Simple</option>                                                     
+                                                    <option value="1">Abstracta</option>                                                     
+                                                    <option value="2">Concreta</option>                                                     
+                                                </select>                                                 
+                                            </div>                                             
+                                        </div>                                         
+                                        <div class="row"> 
+                                            <div class="col-md-5"> 
+                                                Tamaño del Target
+                                            </div>                                             
+                                            <div class="col-md-5"> 
+                                                <select name="selecter_basic" class="btn btn-primary dropdown-toggle" style="width: 100%;" type="button" id="tamanioTarget2"> 
+                                                    <option value="0">Pequeña</option>                                              <option value="1">Chica</option>                                                <option value="2">Intermedia</option>                                           <option value="3">Grande</option>                           
+                                                </select>                                                 
+                                            </div>                                             
+                                        </div>                                         
+                                        <div class="row"> 
+                                            <div class="col-md-5"> 
+                                                Color de fondo
+                                            </div>                                             
+                                            <div class="col-md-5"> 
+                                                <div id="html5DIV"> 
+                                                    <input type="color" id="backgroundColor2" value="#2c3e50" list="colors" style="width:100%;height:34px;"> 
+                                                    <datalist id="colors"> 
+                                                        <option>#bdc3c7</option>                                                         
+                                                        <option>#95a5a6</option>                                                         
+                                                        <option>#7f8c8d</option>                                                         
+                                                        <option>#2c3e50</option>                                                         
+                                                        <option>#34495e</option>                                                         
+                                                    </datalist>                                                     
+                                                    <!-- onchange="clickColor(0, -1, -1, 5)" ante el cambio de color -->                                                     
+                                                </div>                                                 
+                                            </div>                                             
+                                        </div>                                         
+                                        <div class="row"> 
+                                            <div class="col-md-5"> 
+                                                Tiempo de exposicion (seg)
+                                            </div>                                             
+                                            <div class="col-md-5"> 
+                                                <input type="number" id="tiempoExposicion2" min="0" max="60" value="7" required class="form-control" /> 
+                                            </div>                                             
+                                        </div>                                         
+                                        <div class="row"> 
+                                            <div class="col-md-5"> 
+                                                Velocidad de aparición del Target
+                                            </div>                                             
+                                            <div class="col-md-5"> 
+                                                <select name="selecter_basic" class="btn btn-primary dropdown-toggle" style="width: 100%;" type="button" id="tiempoAparicion2"> 
+                                                    <option value="0">Mínima</option>                                                     
+                                                    <option value="1">Media</option>                                                     
+                                                    <option value="2">Máxima</option>                                                     
+                                                    <option value="3">Nula</option>                                                     
+                                                </select>                                                 
+                                            </div>                                             
+                                        </div>                                         
+                                        <div style="display:none" class="row"> 
+                                            <div class="col-md-5"> 
+                                                Trayectoria del Target
+                                            </div>                                             
+                                            <div class="col-md-5"> 
+                                                <select name="selecter_basic" class="btn btn-primary dropdown-toggle" style="width: 100%;" type="button" id="velocidadTrayectoriaTarget2"> 
+                                                    <option value="0">Nula</option>                                                     
+                                                    <option value="1">Lenta</option>                                                     
+                                                    <option value="2">Rápida</option>                                                     
+                                                    <option value="3">Muy Rápida</option>                                                     
+                                                </select>                                                 
+                                            </div>                                             
+                                        </div>                                         
+                                        <div class="row"> 
+                                            <div class="col-md-5"> 
+                                                Cantidad de elementos distractores
+                                            </div>                                             
+                                            <div class="col-md-5"> 
+                                                <input type="number" min="0" max="10" value="0" required class="form-control" id="cantElementosDistractores2" /> 
+                                            </div>                                             
+                                        </div>                                         
+                                        <div class="row"> 
+                                            <div class="col-md-5"> 
+                                                Tamaño de los elementos distractores
+                                            </div>                                             
+                                            <div class="col-md-5"> 
+                                                <select name="selecter_basic" class="btn btn-primary dropdown-toggle" style="width: 100%;" type="button" id="tamanioElementosDistractores2"> 
+                                                    <option value="0">Pequeña</option>                                                     
+                                                    <option value="1">Chica</option>                                                     
+                                                    <option value="2">Intermedia</option>                                                     
+                                                    <option value="3">Grande</option>                                                     
+                                                </select>                                                 
+                                            </div>                                             
+                                        </div>                                         
+                                        <div class="row"> 
+                                            <div class="col-md-5"> 
+                                                Trayectoria de los elementos distractores
+                                            </div>                                             
+                                            <div class="col-md-5"> 
+                                                <select name="selecter_basic" class="btn btn-primary dropdown-toggle" style="width: 100%;" type="button" id="velocidadTrayectoriaElementosDistractores2"> 
+                                                    <option value="0">Nula</option>                                                     
+                                                    <option value="1">Lenta</option>                                                     
+                                                    <option value="2">Rápida</option>                                                     
+                                                    <option value="3">Muy Rápida</option>                                                     
+                                                </select>                                                 
+                                            </div>                                             
+                                        </div>                                         
+                                        <div class="row"> 
+                                            <div class="col-md-5"> 
+                                                Cantidad de veces de repetición de la frase
+                                            </div>                                             
+                                            <div class="col-md-5"> 
+                                                <input type="number" min="1" max="5" value="1" required class="form-control" id="cantRepeticionFrase2" /> 
+                                            </div>                                             
+                                        </div>                                         
+                                        <div class="row"> 
+                                            <div class="col-md-5"> 
+                                                Demora en la aparición del Target (seg)
+                                            </div>                                             
+                                            <div class="col-md-5"> 
+                                                <input type="number" min="0" max="7" value="2" required class="form-control" id="delayFrase2" /> 
+                                            </div>                                             
+                                        </div>                                         
+                                        <div class="row"> 
+                                            <div class="col-md-5"> 
+                                                Control inhibitorio motor
+                                            </div>                                             
+                                            <div class="col-md-5"> 
+                                                <select name="selecter_basic" class="btn btn-primary dropdown-toggle" style="width: 100%;" type="button" id="controlInhibitorioMotor2"> 
+                                                    <option value="0">No</option>                                                     
+                                                    <option value="1">Si</option>                                                     
+                                                </select>                                                 
+                                            </div>                                             
+                                        </div>                                         
+                                        <div class="row"> 
+                                            <div class="col-md-5"> 
+                                                Duración del ejercicio (min)
+                                            </div>                                             
+                                            <div class="col-md-5"> 
+                                                <input type="number" min="0" max="100" value="1" required class="form-control" id="tiempoEjercicio2" /> 
+                                            </div>                                             
+                                        </div>                                         
+                                    </div>                                     
+                                </div>                                 
+                            </div>                             
+                        </div>                         
+                        <!-- Tercer Ejercicio
+      ================================================== -->                         
+                        <div class="example"> 
+                            <div class="row"> 
+                                <div class="col-md-12"> 
+                                    <div class="panel panel-primary"> 
+                                        <div class="panel-heading"> 
+                                            <h3 class="panel-title">Tercer Ejercicio</h3> 
+                                        </div>                                         
+                                        <div class="panel-body"> 
+                                            <div class="row"> 
+                                                <div class="col-md-5"> 
+                                                    Visibilidad del cuadrante
+                                                </div>                                                 
+                                                <div class="col-md-5"> 
+                                                    <input type="number" id="transparenciaCuadrante3" min="0" max="100" value="100" required class="form-control" /> 
+                                                </div>                                                 
+                                            </div>                                             
+                                            <div style="display:none" class="row"> 
+                                                <div class="col-md-5"> 
+                                                    Tipo de figura
+                                                </div>                                                 
+                                                <div class="col-md-5"> 
+                                                    <select name="selecter_basic" class="btn btn-primary dropdown-toggle" style="width: 100%;" type="button" id="tipoFigura3"> 
+                                                        <!--<option value="0">Simple</option>
+                      <option value="1">Abstracta</option>-->                                                         
+                                                        <option value="2">Concreta</option>                                                         
+                                                    </select>                                                     
+                                                </div>                                                 
+                                            </div>                                             
+                                            <div class="row"> 
+                                                <div class="col-md-5"> 
+                                                    Tamaño del Target
+                                                </div>                                                 
+                                                <div class="col-md-5"> 
+                                                    <select name="selecter_basic" class="btn btn-primary dropdown-toggle" style="width: 100%;" type="button" id="tamanioTarget3"> 
+                                                        <option value="0">Pequeña</option>                                                         
+                                                        <option value="1">Chica</option>                                                         
+                                                        <option value="2">Intermedia</option>                                                         
+                                                        <option value="3">Grande</option>                                                         
+                                                    </select>                                                     
+                                                </div>                                                 
+                                            </div>                                             
+                                            <div class="row"> 
+                                                <div class="col-md-5"> 
+                                                    Color de fondo
+                                                </div>                                                 
+                                                <div class="col-md-5"> 
+                                                    <div id="html5DIV"> 
+                                                        <input type="color" id="backgroundColor3" value="#2c3e50" list="colors" style="width:100%;height:34px;"> 
+                                                        <datalist id="colors"> 
+                                                            <option>#bdc3c7</option>                                                             
+                                                            <option>#95a5a6</option>                                                             
+                                                            <option>#7f8c8d</option>                                                             
+                                                            <option>#2c3e50</option>                                                             
+                                                            <option>#34495e</option>                                                             
+                                                        </datalist>                                                         
+                                                        <!-- onchange="clickColor(0, -1, -1, 5)" ante el cambio de color -->                                                         
+                                                    </div>                                                     
+                                                </div>                                                 
+                                            </div>                                             
+                                            <div class="row"> 
+                                                <div class="col-md-5"> 
+                                                    Tiempo de exposicion (seg)
+                                                </div>                                                 
+                                                <div class="col-md-5"> 
+                                                    <input type="number" id="tiempoExposicion3" min="0" max="60" value="7" required class="form-control" /> 
+                                                </div>                                                 
+                                            </div>                                             
+                                            <div class="row"> 
+                                                <div class="col-md-5"> 
+                                                    Velocidad de aparición del Target
+                                                </div>                                                 
+                                                <div class="col-md-5"> 
+                                                    <select name="selecter_basic" class="btn btn-primary dropdown-toggle" style="width: 100%;" type="button" id="tiempoAparicion3"> 
+                                                        <option value="0">Mínima</option>                                                         
+                                                        <option value="1">Media</option>                                                         
+                                                        <option value="2">Máxima</option>                                                         
+                                                        <option value="3">Nula</option>                                                         
+                                                    </select>                                                     
+                                                </div>                                                 
+                                            </div>                                             
+                                            <div style="display:none" class="row"> 
+                                                <div class="col-md-5"> 
+                                                    Trayectoria del Target
+                                                </div>                                                 
+                                                <div class="col-md-5"> 
+                                                    <select name="selecter_basic" class="btn btn-primary dropdown-toggle" style="width: 100%;" type="button" id="velocidadTrayectoriaTarget3"> 
+                                                        <option value="0">Nula</option>                                                         
+                                                        <option value="1">Lenta</option>                                                         
+                                                        <option value="2">Rápida</option>                                                         
+                                                        <option value="3">Muy Rápida</option>                                                         
+                                                    </select>                                                     
+                                                </div>                                                 
+                                            </div>                                             
+                                            <div class="row"> 
+                                                <div class="col-md-5"> 
+                                                    Cantidad de elementos distractores
+                                                </div>                                                 
+                                                <div class="col-md-5"> 
+                                                    <input type="number" min="0" max="10" value="0" required class="form-control" id="cantElementosDistractores3" /> 
+                                                </div>                                                 
+                                            </div>                                             
+                                            <div class="row"> 
+                                                <div class="col-md-5"> 
+                                                    Tamaño de los elementos distractores
+                                                </div>                                                 
+                                                <div class="col-md-5"> 
+                                                    <select name="selecter_basic" class="btn btn-primary dropdown-toggle" style="width: 100%;" type="button" id="tamanioElementosDistractores3"> 
+                                                        <option value="0">Pequeña</option>                                                         
+                                                        <option value="1">Chica</option>                                                         
+                                                        <option value="2">Intermedia</option>                                                         
+                                                        <option value="3">Grande</option>                                                         
+                                                    </select>                                                     
+                                                </div>                                                 
+                                            </div>                                             
+                                            <div class="row"> 
+                                                <div class="col-md-5"> 
+                                                    Trayectoria de los elementos distractores
+                                                </div>                                                 
+                                                <div class="col-md-5"> 
+                                                    <select name="selecter_basic" class="btn btn-primary dropdown-toggle" style="width: 100%;" type="button" id="velocidadTrayectoriaElementosDistractores3"> 
+                                                        <option value="0">Nula</option>                                                         
+                                                        <option value="1">Lenta</option>                                                         
+                                                        <option value="2">Rápida</option>                                                         
+                                                        <option value="3">Muy Rápida</option>                                                         
+                                                    </select>                                                     
+                                                </div>                                                 
+                                            </div>                                             
+                                            <div class="row"> 
+                                                <div class="col-md-5"> 
+                                                    Cantidad de veces de repetición del objeto
+                                                </div>                                                 
+                                                <div class="col-md-5"> 
+                                                    <input type="number" min="1" max="5" value="1" required class="form-control" id="cantRepeticionFrase3" /> 
+                                                </div>                                                 
+                                            </div>                                             
+                                            <div class="row"> 
+                                                <div class="col-md-5"> 
+                                                    Demora en la aparición del Target (seg)
+                                                </div>                                                 
+                                                <div class="col-md-5"> 
+                                                    <input type="number" min="0" max="7" value="2" required class="form-control" id="delayFrase3" /> 
+                                                </div>                                                 
+                                            </div>                                             
+                                            <div style="display:none" class="row"> 
+                                                <div class="col-md-5"> 
+                                                    Control inhibitorio motor
+                                                </div>                                                 
+                                                <div class="col-md-5"> 
+                                                    <select name="selecter_basic" class="btn btn-primary dropdown-toggle" style="width: 100%;" type="button" id="controlInhibitorioMotor3"> 
+                                                        <option value="0">No</option>                                                         
+                                                        <option value="1">Si</option>                                                         
+                                                    </select>                                                     
+                                                </div>                                                 
+                                            </div>                                             
+                                            <div class="row"> 
+                                                <div class="col-md-5"> 
+                                                    Duración del ejercicio (min)
+                                                </div>                                                 
+                                                <div class="col-md-5"> 
+                                                    <input type="number" min="0" max="100" value="1" required class="form-control" id="tiempoEjercicio3" /> 
+                                                </div>                                                 
+                                            </div>                                             
+                                        </div>                                         
+                                    </div>                                     
+                                </div>                                 
+                            </div>                             
+                            <!-- Cuarto Ejercicio 
+      ================================================== -->                             
+                            <div class="example"> 
+                                <div class="row"> 
+                                    <div class="col-md-12"> 
+                                        <div class="panel panel-primary"> 
+                                            <div class="panel-heading"> 
+                                                <h3 class="panel-title">Cuarto Ejercicio</h3> 
+                                            </div>                                             
+                                            <div class="panel-body"> 
+                                                <div class="row"> 
+                                                    <div class="col-md-5"> 
+                                                        Visibilidad del cuadrante
+                                                    </div>                                                     
+                                                    <div class="col-md-5"> 
+                                                        <input type="number" id="transparenciaCuadrante4" min="0" max="100" value="100" required class="form-control" /> 
+                                                    </div>                                                     
+                                                </div>                                                 
+                                                <div class="row"> 
+                                                    <div class="col-md-5"> 
+                                                        Tipo de figura
+                                                    </div>                                                     
+                                                    <div class="col-md-5"> 
+                                                        <select name="selecter_basic" class="btn btn-primary dropdown-toggle" style="width: 100%;" type="button" id="tipoFigura4"> 
+                                                            <option value="0">Simple</option>                                                             
+                                                            <option value="1">Abstracta</option>                                                             
+                                                            <option value="2">Concreta</option>                                                             
+                                                        </select>                                                         
+                                                    </div>                                                     
+                                                </div>                                                 
+                                                <div class="row"> 
+                                                    <div class="col-md-5"> 
+                                                        Tamaño del Target
+                                                    </div>                                                     
+                                                    <div class="col-md-5"> 
+                                                        <select name="selecter_basic" class="btn btn-primary dropdown-toggle" style="width: 100%;" type="button" id="tamanioTarget4"> 
+                                                            <option value="0">Pequeña</option>                                                             
+                                                            <option value="1">Chica</option>                                                             
+                                                            <option value="2">Intermedia</option>                                                             
+                                                            <option value="3">Grande</option>                                                             
+                                                        </select>                                                         
+                                                    </div>                                                     
+                                                </div>                                                 
+                                                <div class="row"> 
+                                                    <div class="col-md-5"> 
+                                                        Color de fondo
+                                                    </div>                                                     
+                                                    <div class="col-md-5"> 
+                                                        <div id="html5DIV"> 
+                                                            <input type="color" id="backgroundColor4" value="#2c3e50" list="colors" style="width:100%;height:34px;"> 
+                                                            <datalist id="colors"> 
+                                                                <option>#bdc3c7</option>                                                                 
+                                                                <option>#95a5a6</option>                                                                 
+                                                                <option>#7f8c8d</option>                                                                 
+                                                                <option>#2c3e50</option>                                                                 
+                                                                <option>#34495e</option>                                                                 
+                                                            </datalist>                                                             
+                                                            <!-- onchange="clickColor(0, -1, -1, 5)" ante el cambio de color -->                                                             
+                                                        </div>                                                         
+                                                    </div>                                                     
+                                                </div>                                                 
+                                                <div class="row"> 
+                                                    <div class="col-md-5"> 
+                                                        Tiempo de exposicion (seg)
+                                                    </div>                                                     
+                                                    <div class="col-md-5"> 
+                                                        <input type="number" id="tiempoExposicion4" min="0" max="60" value="7" required class="form-control" /> 
+                                                    </div>                                                     
+                                                </div>                                                 
+                                                <div class="row"> 
+                                                    <div class="col-md-5"> 
+                                                        Velocidad de aparición del Target
+                                                    </div>                                                     
+                                                    <div class="col-md-5"> 
+                                                        <select name="selecter_basic" class="btn btn-primary dropdown-toggle" style="width: 100%;" type="button" id="tiempoAparicion4"> 
+                                                            <option value="0">Mínima</option>                                                             
+                                                            <option value="1">Media</option>                                                             
+                                                            <option value="2">Máxima</option>                                                             
+                                                            <option value="3">Nula</option>                                                             
+                                                        </select>                                                         
+                                                    </div>                                                     
+                                                </div>                                                 
+                                                <div style="display:none" class="row"> 
+                                                    <div class="col-md-5"> 
+                                                        Trayectoria del Target
+                                                    </div>                                                     
+                                                    <div class="col-md-5"> 
+                                                        <select name="selecter_basic" class="btn btn-primary dropdown-toggle" style="width: 100%;" type="button" id="velocidadTrayectoriaTarget4"> 
+                                                            <option value="0">Nula</option>                                                             
+                                                        </select>                                                         
+                                                    </div>                                                     
+                                                </div>                                                 
+                                                <div class="row"> 
+                                                    <div class="col-md-5"> 
+                                                        Cantidad de elementos distractores
+                                                    </div>                                                     
+                                                    <div class="col-md-5"> 
+                                                        <input type="number" min="0" max="10" value="0" required class="form-control" id="cantElementosDistractores4" /> 
+                                                    </div>                                                     
+                                                </div>                                                 
+                                                <div class="row"> 
+                                                    <div class="col-md-5"> 
+                                                        Tamaño de los elementos distractores
+                                                    </div>                                                     
+                                                    <div class="col-md-5"> 
+                                                        <select name="selecter_basic" class="btn btn-primary dropdown-toggle" style="width: 100%;" type="button" id="tamanioElementosDistractores4"> 
+                                                            <option value="0">Pequeña</option>                        
+                                                            <option value="1">Chica</option>                                                             
+                                                            <option value="2">Intermedia</option>                                             
+                                                            <option value="3">Grande</option>                                                             
+                                                        </select>                                                         
+                                                    </div>                                                     
+                                                </div>                                                 
+                                                <div class="row"> 
+                                                    <div class="col-md-5"> 
+                                                        Trayectoria de los elementos distractores
+                                                    </div>                                                     
+                                                    <div class="col-md-5"> 
+                                                        <select name="selecter_basic" class="btn btn-primary dropdown-toggle" style="width: 100%;" type="button" id="velocidadTrayectoriaElementosDistractores4"> 
+                                                            <option value="0">Nula</option>                                                             
+                                                            <option value="1">Lenta</option>                                                             
+                                                            <option value="2">Rápida</option>                                                             
+                                                            <option value="3">Muy Rápida</option>                                                             
+                                                        </select>                                                         
+                                                    </div>                                                     
+                                                </div>                                                 
+                                                <div class="row"> 
+                                                    <div class="col-md-5"> 
+                                                        Cantidad de veces de repetición del sonido
+                                                    </div>                                                     
+                                                    <div class="col-md-5"> 
+                                                        <input type="number" min="1" max="5" value="1" required class="form-control" id="cantRepeticionFrase4" /> 
+                                                    </div>                                                     
+                                                </div>                                                 
+                                                <div class="row"> 
+                                                    <div class="col-md-5"> 
+                                                        Demora en la aparición del Target (seg)
+                                                    </div>                                                     
+                                                    <div class="col-md-5"> 
+                                                        <input type="number" min="0" max="7" value="2" required class="form-control" id="delayFrase4" /> 
+                                                    </div>                                                     
+                                                </div>                                                 
+                                                <div style="display:none" class="row"> 
+                                                    <div class="col-md-5"> 
+                                                        Control inhibitorio motor
+                                                    </div>                                                     
+                                                    <div class="col-md-5"> 
+                                                        <select name="selecter_basic" class="btn btn-primary dropdown-toggle" style="width: 100%;" type="button" id="controlInhibitorioMotor4"> 
+                                                            <option value="0">No</option>                                                             
+                                                            <option value="1">Si</option>                                                             
+                                                        </select>                                                         
+                                                    </div>                                                     
+                                                </div>                                                 
+                                                <div class="row"> 
+                                                    <div class="col-md-5"> 
+                                                        Duración del ejercicio (min)
+                                                    </div>                                                     
+                                                    <div class="col-md-5"> 
+                                                        <input type="number" min="0" max="100" value="1" required class="form-control" id="tiempoEjercicio4" /> 
+                                                    </div>                                                     
+                                                </div>                                                 
+                                            </div>                                             
+                                        </div>                                         
+                                    </div>                                     
+                                </div>                                 
+                                <div class="row"> 
+                                    <div class="col-md-1"></div>                                     
+                                    <div class="col-md-1"></div>                                     
+                                    <div class="col-md-1"></div>                                     
+                                    <div class="col-md-1"></div>                                     
+                                    <div class="col-md-1"></div>                                     
+                                    <div class="col-md-1"></div>                                     
+                                    <div class="col-md-1"></div>                                     
+                                    <div class="col-md-1"></div>                                     
+                                    <div class="col-md-1"></div> 
+                                    <div class="col-md-1"></div>                                                                         
+                                    <div class="col-md-2"> 
+                                        <button type="button" id="botonListo" class="btn btn-primary btn-block" data-toggle="modal" data-target="#myModal">Guardar <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span></button>
+                                    </div>                                     
+                                    <div class="container"> 
+                                        <!-- Modal -->                                         
+                                        <div class="modal fade" id="myModal" role="dialog"> 
+                                            <div class="modal-dialog"> 
+                                                <!-- Modal content-->                                                 
+                                                <div class="modal-content"> 
+                                                    <div class="modal-header"> 
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>                                                         
+                                                        <h4 class="modal-title">Rehabilitación Congnitiva</h4> 
+                                                    </div>                                                     
+                                                    <div class="modal-body"> 
+                                                        <p id="textoModal">Los cambios fueron salvados.</p> 
+                                                    </div>                                                     
+                                                    <div class="modal-footer"> 
+                                                        <button type="button" id="cerrar" class="btn btn-default" data-dismiss="modal">Cerrar</button>                                                         
+                                                    </div>                                                     
+                                                </div>                                                 
+                                            </div>                                             
+                                        </div>                                         
+                                    </div>                                     
+
+                                    <!-- End Container -->                                     
+                                </div>                                 
+                                <br> 
+                            </div>
