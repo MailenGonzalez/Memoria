@@ -1,0 +1,12 @@
+.Highlighted a{
+   background-color : Green !important;
+   background-image :none !important;
+   color: White !important;
+   font-weight:bold !important;
+   font-size: 12pt;
+}
+
+.ui-datepicker .ui-datepicker-header {
+background-color : #3bafda;
+color: white;
+}
