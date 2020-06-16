@@ -41,28 +41,28 @@ function dataLoaded(text){
         function(event) {
             var data = event.data;
             localStorage.IDPaciente = data.id;     
-            document.location.href = "patient.html"; //?IdPaciente="+data.id      
+            document.location.href = "/Memoria/patient.html"; //?IdPaciente="+data.id      
         });
         $('#btConfig'+i).bind('click', { id: IDPaciente, nombre: nombrePaciente, apellido: apellidoPaciente },//creo que solo uso el ID
         function(event) {
             var data = event.data;
             localStorage.IDPaciente = data.id;
             localStorage.name = data.nombre + " "+ data.apellido;      
-            document.location.href = "config.html";        
+            document.location.href = "/Memoria/config.html";        
         });
 		$('#btConfigMem'+i).bind('click', { id: IDPaciente, nombre: nombrePaciente, apellido: apellidoPaciente },//creo que solo uso el ID
         function(event) {
             var data = event.data;
             localStorage.IDPaciente = data.id;
             localStorage.name = data.nombre + " "+ data.apellido;      
-            document.location.href = "configMemoria.html";        
+            document.location.href = "/Memoria/configMemoria.html";        
         });
         $('#btResults'+i).bind('click', { id: IDPaciente, nombre: nombrePaciente, apellido: apellidoPaciente }, //creo que solo uso el ID
         function(event) {
             var data = event.data;
             localStorage.IDPaciente = data.id;
             localStorage.name = data.nombre + " "+ data.apellido;      
-            document.location.href = "results.html";        
+            document.location.href = "/Memoria/results.html";        
         });
 		
 		//HACER LUEGO DE HTML RESULTADOS
@@ -71,7 +71,7 @@ function dataLoaded(text){
             var data = event.data;
             localStorage.IDPaciente = data.id;
             localStorage.name = data.nombre + " "+ data.apellido;      
-            document.location.href = "results.html";        
+            document.location.href = "/Memoria/results.html";        
         });
 
         $('#btPlay'+i).bind('click', { id: IDPaciente},
@@ -96,7 +96,7 @@ function dataLoaded(text){
 
 $( "#btAddPaciente" ).click(function() {
     localStorage.IDPaciente = "";//para que no busque los datos desp
-    document.location.href = "patient.html"; 
+    document.location.href = "/Memoria/patient.html"; 
 });
 
 /***************************************** Aceptar Button *************************************************/
