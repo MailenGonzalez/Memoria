@@ -96,6 +96,7 @@ function dataLoaded(text){
 
 $( "#btAddPaciente" ).click(function() {
     localStorage.IDPaciente = "";//para que no busque los datos desp
+	console.log("Entra en boton");
     document.location.href = "/Memoria/patient.html"; 
 });
 
