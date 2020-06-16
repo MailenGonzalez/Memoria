@@ -6,9 +6,9 @@
       public function __construct()
       {
          $this->engine = 'mysql';
-         $this->host = 'databases.000webhost.com'; ///'mysql.hostinger.com.ar';//databases-auth.000webhost.com/
-         $this->database = 'id13670518_paradigmamemoria';//'u782267423_rehab';//id13670518_paradigmamemoria
-         $this->user = 'id13670518_paradigmamemoria';//'u782267423_rehab'; //id13670518_paradigmamemoria
+         $this->host = 'sql10.freesqldatabase.com'; ///'mysql.hostinger.com.ar';//databases-auth.000webhost.com/
+         $this->database = 'sql10347985';//'u782267423_rehab';//id13670518_paradigmamemoria
+         $this->user = 'sql10347985';//'u782267423_rehab'; //id13670518_paradigmamemoria
          $this->pass = 'Hospital_Italiano2020';//'Sl3zqgJeQR'; // Hospital_Italiano2020
          $dns = $this->engine.':dbname='.$this->database.";host=".$this->host;
          $this->db = new PDO( $dns, $this->user, $this->pass ); 
