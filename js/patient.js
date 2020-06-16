@@ -82,6 +82,6 @@ $( "#botonListo" ).click(function() {
 
 /***************************************** Close Button *************************************************/
 $( "#cerrar" ).click(function() {
-     document.location.href = "/web/index.html";
+     document.location.href = "/index.html";
 });
 });
