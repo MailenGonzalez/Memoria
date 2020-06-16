@@ -82,6 +82,6 @@ $( "#botonListo" ).click(function() {
 
 /***************************************** Close Button *************************************************/
 $( "#cerrar" ).click(function() {
-     document.location.href = "/index.html";
+     document.location.href = "/Memoria";
 });
 });
