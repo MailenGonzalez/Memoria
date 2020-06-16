@@ -77,19 +77,19 @@ function dataLoaded(text){
         $('#btPlay'+i).bind('click', { id: IDPaciente},
         function(event) {
             var data = event.data;
-            httpGetAsync("/API/patient/ENCRIPT/"+data.id, gameEncript);    
+            httpGetAsync("/Memoria/API/patient/ENCRIPT/"+data.id, gameEncript);    
         });
 		
 		$('#btPlayMem'+i).bind('click', { id: IDPaciente},
         function(event) {
             var data = event.data;
-            httpGetAsync("/API/patient/ENCRIPT/"+data.id, gameEncriptMem);    
+            httpGetAsync("/Memoria/API/patient/ENCRIPT/"+data.id, gameEncriptMem);    
         });
         $('#btShare'+i).bind('click', { id: IDPaciente},
         function(event) {
             var data = event.data;
             localStorage.IDPaciente = data.id;
-            httpGetAsync("/API/patient/ENCRIPT/"+data.id, patientEncript);       
+            httpGetAsync("/Memoria/API/patient/ENCRIPT/"+data.id, patientEncript);       
         });
     }
 }
@@ -104,14 +104,14 @@ $( "#btAddPaciente" ).click(function() {
 $( "#aceptar" ).click(function() {
     for (var i = 0; i < $('#tableBody')[0].childElementCount; i++) {
         if ($('#btCheckbox'+i)[0].checked == true) {
-           httpGetAsync("/API/patient/DELETE/"+IDPacientes[i],voidLoaded);//Rehacer se va esto
+           httpGetAsync("/Memoria/API/patient/DELETE/"+IDPacientes[i],voidLoaded);//Rehacer se va esto
         }      
     }
     //httpGetAsync("/API/patient/PATIENTS",dataLoaded);
 });
 
 function voidLoaded(text){
-    httpGetAsync("/API/patient/PATIENTS",dataLoaded);//A ver si esto funca
+    httpGetAsync("/Memoria/API/patient/PATIENTS",dataLoaded);//A ver si esto funca
 }
 
 function gameEncript(text){
@@ -121,14 +121,14 @@ function gameEncript(text){
 }
 function gameEncriptMem(text){
 	text = text.substr(1,text.length-2);
-    var win = window.open("/paradigmamemoria/?IdPaciente="+text, '_blank');
+    var win = window.open("/Memoria/paradigmamemoria/?IdPaciente="+text, '_blank');
     win.focus();  
 }
 
 function patientEncript(text){
     text = text.substr(1,text.length-2);
     onlyToEncrypt = text;
-    httpGetAsync("/API/patient/DATA/"+localStorage.IDPaciente,patientDataLoaded);
+    httpGetAsync("/Memoria/API/patient/DATA/"+localStorage.IDPaciente,patientDataLoaded);
 }
 
 function patientDataLoaded(text){
@@ -147,11 +147,11 @@ function patientDataLoaded(text){
 $("#search").keydown(function(event){
     if(event.keyCode == 13){
         if ($("#search").val() == "")
-            httpGetAsync("/API/patient/PATIENTS",dataLoaded);
+            httpGetAsync("/Memoria/API/patient/PATIENTS",dataLoaded);
         else
-            httpGetAsync("/API/patient/NAME/"+$("#search").val(),dataLoaded);
+            httpGetAsync("/Memoria/API/patient/NAME/"+$("#search").val(),dataLoaded);
     }
 });
 
-httpGetAsync("/API/patient/PATIENTS",dataLoaded);
+httpGetAsync("/Memoria/API/patient/PATIENTS",dataLoaded);
 });
