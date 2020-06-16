@@ -6,10 +6,10 @@
       public function __construct()
       {
          $this->engine = 'mysql';
-         $this->host = 'mysql.hostinger.com.ar';
-         $this->database = 'u782267423_rehab';
-         $this->user = 'u782267423_rehab';
-         $this->pass = 'Sl3zqgJeQR';
+         $this->host = 'sql10.freesqldatabase.com';
+         $this->database = 'sql10347985';
+         $this->user = 'sql10347985';
+         $this->pass = '1TiiMM2Tgu';
          $dns = $this->engine.':dbname='.$this->database.";host=".$this->host;
          $this->db = new PDO( $dns, $this->user, $this->pass ); 
       }
